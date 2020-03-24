@@ -10,10 +10,6 @@
 - (void)handleMethodCall:(FlutterMethodCall *)call result:(FlutterResult)result{
     NSDictionary * data = call.arguments;
     NSString * method = call.method;
-   
-       [DTRSA encryptString:@"" privateKey:@""];
-       [DTRSA decryptString:@"" publicKey:@""];
-       [DTRSA decryptData:@"" privateKey:@""];
     if ([method isEqualToString:@"encrypt"]) {
         NSString * text = [data objectForKey:@"txt"];
         NSString * publicKey = [data objectForKey:@"publicKey"];
@@ -27,7 +23,7 @@
     }else if ([method isEqualToString:@"sign"]){
         NSString * text = [data objectForKey:@"plainText"];
         NSString * privateKey = [data objectForKey:@"privateKey"];
-        NSString * string = [DTRSA encryptString:text publicKey:privateKey];
+        NSString * string = [DTRSA encryptString:text privateKey:privateKey];
         result(string);
     }else if ([method isEqualToString:@"verify"]){
         NSString * plainText = [data objectForKey:@"plainText"];
