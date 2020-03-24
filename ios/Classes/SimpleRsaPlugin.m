@@ -3,11 +3,14 @@
 
 @implementation SimpleRsaPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-    FlutterMethodChannel * chennel = [[FlutterMethodChannel alloc]initWithName:@"juanito21.com/simple_rsa" binaryMessenger:registrar.messenger codec:nil];
-    SimpleRsaPlugin * plugin = [[SimpleRsaPlugin alloc]init];
-    [registrar addMethodCallDelegate:plugin channel:chennel];
+    FlutterMethodChannel* channel = [FlutterMethodChannel
+          methodChannelWithName:@"juanito21.com/simple_rsa"
+                binaryMessenger:[registrar messenger]];
+      SimpleRsaPlugin* instance = [[SimpleRsaPlugin alloc] init];
+      [registrar addMethodCallDelegate:instance channel:channel];
 }
 - (void)handleMethodCall:(FlutterMethodCall *)call result:(FlutterResult)result{
+    NSLog(@"调用原生");
     NSDictionary * data = call.arguments;
     NSString * method = call.method;
     if ([method isEqualToString:@"encrypt"]) {
