@@ -11,7 +11,7 @@
 }
 - (void)handleMethodCall:(FlutterMethodCall *)call result:(FlutterResult)result{
     NSLog(@"调用原生");
-     [DTRSA signSHA1WithRSA:@"" privateKey:@""];
+    //  [DTRSA signSHA1WithRSA:@"" privateKey:@""];
     // [DTRSA verifySHA1WithRSA:@"" signature:@"" publicKey:@""];
     NSDictionary * data = call.arguments;
     NSString * method = call.method;
