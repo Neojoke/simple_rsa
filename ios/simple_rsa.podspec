@@ -3,7 +3,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'simple_rsa'
-  s.version          = '0.0.4'
+  s.version          = '0.0.5'
   s.summary          = 'A simple RSA plugin for flutter.'
   s.description      = <<-DESC
 A new flutter plugin project.
@@ -15,7 +15,7 @@ A new flutter plugin project.
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.dependency 'ObjcRSA', '~> 0.4.0'
+  s.dependency 'ObjcRSA', '~> 0.5.0'
   s.ios.deployment_target = '8.0'
 end
 
